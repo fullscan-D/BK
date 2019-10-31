@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "deleteBookMark.h"
 #include "errorBookMark.h"
@@ -18,6 +19,10 @@ int main(int args, char * argv[]){
     // .bookmark init
     initBookMark();
 
+    if (!strcmp(argv[1],"-s"))
+        saveBookMark(argv);
+
+    printf("argv : %s", argv[2]);
     return 0;
 }
 
