@@ -15,14 +15,17 @@ int main(int args, char * argv[]){
     if(errorBookMark(args) == -1){
         printf("Not command\n");
     }
+    else if(errorBookMark(args) == 0)
+        return 0;
 
     // .bookmark init
     initBookMark();
 
     if (!strcmp(argv[1],"-s"))
         saveBookMark(argv);
+    else if (!strcmp(argv[1],"-l"))
+        listBookMark(argv);
 
-    printf("argv : %s", argv[2]);
     return 0;
 }
 
