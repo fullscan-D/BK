@@ -2,7 +2,10 @@
 #include "errorBookMark.h"
 
 int errorBookMark(int args){
-    if(args !=  2 || args != 3)
+    if(args ==  2 || args == 3)
+        return 1;
+    else if(args == 1)
+        return 0;
+    else    
         return -1;
-    return 1;
 }
