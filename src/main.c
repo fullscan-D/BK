@@ -7,10 +7,10 @@
 #include "loadBookMark.h"
 #include "listBookMark.h"
 #include "initBookMark.h"
+#include "stdbk.h"
 
 int main(int args, char * argv[]){
     
-
     // command error
     if(errorBookMark(args) == -1){
         printf("Not command\n");
@@ -25,8 +25,11 @@ int main(int args, char * argv[]){
         saveBookMark(argv);
     else if (!strcmp(argv[1],"-i"))
         listBookMark(argv);
-    else if(!strcmp(argv[1],"-l"))
+    else if(!strcmp(argv[1],"-l")) {
+	    /* printf("%s\n", argv[1]); */
+	    /* printf("%s %s\n", argv[1], argv[2]); */
         loadBookMark(argv);
+    }
 
     return 0;
 }
