@@ -1,4 +1,5 @@
 #!/bin/bash
+str=""
 if  [ "-i" == "$1" ]; then
     ./BK -i
 elif [ "-s" == "$1" ]; then
@@ -7,6 +8,18 @@ elif [ "-s" == "$1" ]; then
     else
         echo BK -s [name]
     fi
-else
-    echo $@ not command 
+elif [ "-l" == "$1" ]; then
+    while read temp; do
+        if [ -z "$temp" ]; then continue; 
+        fi
+            echo hi
+            str="${temp%%/*}"
+            if [ "$str" == "$2" ]; then
+                str="${temp#*/}"
+                break;
+            fi
+        done < ../usr/.bookmark 
+    else
+        echo $@ not command 
 fi
+cd $str
