@@ -23,8 +23,10 @@ int main(int args, char * argv[]){
 
     if (!strcmp(argv[1],"-s"))
         saveBookMark(argv);
-    else if (!strcmp(argv[1],"-l"))
+    else if (!strcmp(argv[1],"-i"))
         listBookMark(argv);
+    else if(!strcmp(argv[1],"-l"))
+        loadBookMark(argv);
 
     return 0;
 }

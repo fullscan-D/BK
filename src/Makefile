@@ -1,4 +1,4 @@
-BK : initBookMark.o listBookMark.o saveBookMark.o deleteBookMark.o loadBookMark.o errorBookMark.o main.o 
+BKsub : initBookMark.o listBookMark.o saveBookMark.o deleteBookMark.o loadBookMark.o errorBookMark.o main.o 
 	gcc -o BK initBookMark.o listBookMark.o saveBookMark.o deleteBookMark.o loadBookMark.o errorBookMark.o main.o
 
 saveBookMark.o : saveBookMark.c 
