@@ -66,7 +66,6 @@ void loadBookMark(char name[]){
     /* sprintf(sh_buffer, "source ./loadBookMark.sh %s", buff_temp); */
     /* system(sh_buffer); */
 
-    printf("%s", buff_temp);
 
     /**************shell script**********/
 
