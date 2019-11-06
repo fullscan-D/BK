@@ -10,7 +10,7 @@
 #define MAX_PATH 1024
 
 #define PATH BOOKMARK_PATH
-void loadBookMark(char * name[MAX_COMMAND]){
+void loadBookMark(char name[]){
     FILE *fp;
     char * buff;
     char * print_buff;
@@ -32,7 +32,7 @@ void loadBookMark(char * name[MAX_COMMAND]){
                 else
                     break;
             }
-            if(strcmp(name[2],buff_temp))
+            if(strcmp(name,buff_temp))
                 searchNUM++;
             else
                 break;

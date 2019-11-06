@@ -1,27 +1,25 @@
 #!/bin/bash
+# bkpath="$HOME/BK/src"
+# if [[ "$PATH" =~ "$bkpath" ]]; then
+	# PATH="$bkpath:$PATH"
+# fi
+if [ -z "$BOOKMARKPATH" ]; then
+    BOOKMARKPATH="$HOME/.bookmark"
+fi
+
+# echo "$bkpath"
+# echo "$PATH"
+
 str=""
 if  [ "-i" == "$1" ]; then
-    ./BK -i
+	BK $BOOKMARKPATH -i
 elif [ "-s" == "$1" ]; then
     if [ -n "$2" ]; then
-        ./BK -s $2
+	    BK $BOOKMARKPATH -s $2
     else
-        echo BK -s [name]
+        echo "bookMark.sh -s [name]"
     fi
 elif [ "-l" == "$1" ]; then
-    # echo `./BK -l $2`
-    str=`./BK -l $2`
-    # while read temp; do
-        # if [ -z "$temp" ]; then continue; 
-        # fi
-            # echo hi
-            # str="${temp%%/*}"
-            # if [ "$str" == "$2" ]; then
-                # str="${temp#*/}"
-                # break;
-            # fi
-    # done < ../usr/.bookmark 
-    # else
-        # echo $@ not command 
+	str=`BK $BOOKMARKPATH -l $2`
 fi
-cd $str
+echo $str

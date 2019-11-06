@@ -8,7 +8,7 @@
 
 #define MAX_BOOKMARK 100
 #define MAX_PATH 1024
-void saveBookMark(char * name[]){
+void saveBookMark(char name[]){
     FILE * fp;
     char * buff;
     char * PATH;
@@ -32,7 +32,7 @@ void saveBookMark(char * name[]){
                 else if(buff[i] == '/') checkslash++;
                 if(checkslash == 2) break;
             }
-            if(!strcmp(name[2],PATH)){
+            if(!strcmp(name,PATH)){
                 flag = 1;
                 break;
             }
@@ -48,7 +48,7 @@ void saveBookMark(char * name[]){
     else
     {
         fp=fopen(BOOKMARK_PATH,"a");
-        fprintf(fp,"%s/%s\n",name[2],path);
+        fprintf(fp,"%s/%s\n",name,path);
         fclose(fp);
     }
     free(buff);
