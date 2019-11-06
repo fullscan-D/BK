@@ -21,4 +21,4 @@ main.o : main.c
 
 
 clean : 
-	rm *.o BK ../usr/.bookmark
+	rm *.o BK # ../usr/.bookmark

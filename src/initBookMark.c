@@ -1,19 +1,19 @@
 #include <stdio.h>
 
 #include "initBookMark.h"
+#include "stdbk.h"
 
 int initBookMark(){
     FILE * fp;
-    fp = fopen("../usr/.bookmark","r");
+    fp = fopen(BOOKMARK_PATH,"r");
     if(fp != NULL){
-        return 0;
         fclose(fp);
+        return 0;
     }
     else{
-        fclose(fp);
-        fp = fopen("../usr/.bookmark","a");
+        fp = fopen(BOOKMARK_PATH,"w");
         fprintf(fp,"*****^THIS__IS__BOOKMARK__FOR__BK^****\n");
+        fclose(fp);
     }
-    fclose(fp);
     return 0;
 }
