@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 #include "listBookMark.h"
+#include "stdbk.h"
+
 #define MAX_COMMAND 1024
 void listBookMark(char * list[MAX_COMMAND]){
     FILE *fp;
@@ -10,7 +12,7 @@ void listBookMark(char * list[MAX_COMMAND]){
 
     buff = (char*)malloc(sizeof(char)*MAX_COMMAND);
 
-    fp = fopen("../usr/.bookmark","r");
+    fp = fopen(BOOKMARK_PATH,"r");
     printf("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     printf("\n");
     printf("\t\t  [ Book Makr LIST ] \n");

@@ -4,12 +4,13 @@
 #include <string.h>
 
 #include "loadBookMark.h"
+#include "stdbk.h"
 
 #define MAX_COMMAND 1024
 #define MAX_PATH 1024
 
-#define PATH "../usr/.bookmark"
-void loadBookMark(char * name[MAX_COMMAND]){
+#define PATH BOOKMARK_PATH
+void loadBookMark(char name[]){
     FILE *fp;
     char * buff;
     char * print_buff;
@@ -31,7 +32,7 @@ void loadBookMark(char * name[MAX_COMMAND]){
                 else
                     break;
             }
-            if(strcmp(name[2],buff_temp))
+            if(strcmp(name,buff_temp))
                 searchNUM++;
             else
                 break;
@@ -60,9 +61,12 @@ void loadBookMark(char * name[MAX_COMMAND]){
 
     if(strlen(buff_temp)!=0)
         buff_temp[strlen(buff_temp)-1]='\0';
-    char sh_buffer[1000];
-    sprintf(sh_buffer, "source ./loadBookMark.sh %s", buff_temp);
-    system(sh_buffer);
+
+    /* char sh_buffer[1000]; */
+    /* sprintf(sh_buffer, "source ./loadBookMark.sh %s", buff_temp); */
+    /* system(sh_buffer); */
+
+    printf("%s", buff_temp);
 
     /**************shell script**********/
 

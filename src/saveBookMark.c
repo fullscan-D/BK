@@ -4,10 +4,11 @@
 #include <string.h>
 
 #include "saveBookMark.h"
+#include "stdbk.h"
 
 #define MAX_BOOKMARK 100
 #define MAX_PATH 1024
-void saveBookMark(char * name[]){
+void saveBookMark(char name[]){
     FILE * fp;
     char * buff;
     char * PATH;
@@ -17,7 +18,7 @@ void saveBookMark(char * name[]){
     buff=(char*)malloc(sizeof(char)*MAX_BOOKMARK);
     PATH = (char*)malloc(sizeof(char)*MAX_PATH);
     getcwd(path,MAX_PATH);
-    fp = fopen("../usr/.bookmark","r");
+    fp = fopen(BOOKMARK_PATH,"r");
     fgets(buff,MAX_BOOKMARK,fp);
 
     //check list
@@ -31,7 +32,7 @@ void saveBookMark(char * name[]){
                 else if(buff[i] == '/') checkslash++;
                 if(checkslash == 2) break;
             }
-            if(!strcmp(name[2],PATH)){
+            if(!strcmp(name,PATH)){
                 flag = 1;
                 break;
             }
@@ -46,8 +47,8 @@ void saveBookMark(char * name[]){
     if(flag==1) printf("\"%s\" already exists.\n",PATH);
     else
     {
-        fp=fopen("../usr/.bookmark","a");
-        fprintf(fp,"%s/%s\n",name[2],path);
+        fp=fopen(BOOKMARK_PATH,"a");
+        fprintf(fp,"%s/%s\n",name,path);
         fclose(fp);
     }
     free(buff);
