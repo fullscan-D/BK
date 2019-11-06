@@ -1,6 +1,12 @@
 #!/bin/bash
-book(){
+if  [ "-i" == "$1" ]; then
     ./BK -i
-    ls
-}
-book $1
+elif [ "-s" == "$1" ]; then
+    if [ -n "$2" ]; then
+        ./BK -s $2
+    else
+        echo BK -s [name]
+    fi
+else
+    echo $@ not command 
+fi
