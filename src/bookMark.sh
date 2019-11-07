@@ -23,4 +23,11 @@ elif [ "-s" == "$1" ]; then
 elif [ "-l" == "$1" ]; then
 	str=`bookmark $BOOKMARKPATH -l $2`
     cd $str
+elif [ "-h" == "$1" ]; then
+    echo Bookmark save : BK -s bookmarkName
+    echo Bookmark list : BK -i
+    echo Bookmark load : BK -l bookmarkName
+    echo Bookmark help : BK -h
+else
+    echo BK $@ is not command
 fi
