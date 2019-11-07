@@ -69,6 +69,7 @@ void loadBookMark(char name[]){
 
     /**************shell script**********/
 
+    printf("%s",buff_temp);
     fclose(fp);
     free(buff);
     free(buff_temp);

@@ -22,5 +22,6 @@ elif [ "-s" == "$1" ]; then
     fi
 elif [ "-l" == "$1" ]; then
 	str=`bookmark $BOOKMARKPATH -l $2`
+    echo $str
+    cd $str
 fi
-cd $str
