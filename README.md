@@ -22,6 +22,8 @@ BK acts as a directory bookmark.
 ![loadbook](https://user-images.githubusercontent.com/37411959/68451182-0fcd7e80-0231-11ea-90eb-40a2dfb067e2.gif)
 
 
+# Add for the bash profile.
+<img width="393" alt="스크린샷 2019-11-08 오후 2 22 35" src="https://user-images.githubusercontent.com/37411959/68451743-43a9a380-0233-11ea-9dff-82dacde2c87e.png">
 
 
 License
