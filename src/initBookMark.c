@@ -5,6 +5,8 @@
 
 int initBookMark(){
     FILE * fp;
+    FILE * ffp;
+
     fp = fopen(BOOKMARK_PATH,"r");
     if(fp != NULL){
         fclose(fp);

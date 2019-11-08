@@ -23,9 +23,9 @@ int main(int args, char * argv[]){
     memset(BOOKMARK_PATH, 0, strlen(argv[1]));
     strncpy(BOOKMARK_PATH, argv[1], strlen(argv[1]));
     /* printf("%s\n", BOOKMARK_PATH); */
+    initBookMark();
 
     // .bookmark init
-    initBookMark();
 
     if (!strcmp(argv[2],"-s"))
         saveBookMark(argv[3]);
